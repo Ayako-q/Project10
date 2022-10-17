@@ -37,6 +37,12 @@ public class Collection {
         addCamera(cam);
     }
 
+    // 2.4 method to print whole list of objects.
+    public void printAllCamers() {
+        for (Camera c : collection)
+            c.printDescription();
+    }
+
     // 2.5 find methods
     public void findByModel() {
         System.out.println("What is the model of camera we are looking for?");
@@ -48,17 +54,6 @@ public class Collection {
         }
     }
 
-    // 2.7 other method for search objects
-    public void findByBrand() {
-        System.out.println("What is the brand of camera we are looking for?");
-        String brand = inputString();
-        System.out.println("\nFound results:");
-        for (Camera c : collection) {
-            if (c.getBrand().toLowerCase().equals(brand)) {
-                c.printDescription();
-            }
-        }
-    }
     // 2.6 sort() method
     public void sortCameras() {
         boolean isSorted = false;
@@ -78,6 +73,18 @@ public class Collection {
         printAllCamers();
     }
 
+    // 2.7 other method for search objects
+    public void findByBrand() {
+        System.out.println("What is the brand of camera we are looking for?");
+        String brand = inputString();
+        System.out.println("\nFound results:");
+        for (Camera c : collection) {
+            if (c.getBrand().toLowerCase().equals(brand)) {
+                c.printDescription();
+            }
+        }
+    }
+
     // Method for outputing options that are available
     public void UI() {
         System.out.println("\nChoose an option to proceed:\n" +
@@ -88,16 +95,11 @@ public class Collection {
                 "5 - sort cameras by type\n" +
                 "0 - exit the program\n");
     }
-    // 2.4 method to print whole list of objects.
-    public void printAllCamers() {
-        for (Camera c : collection)
-            c.printDescription();
-    }
 
     public void logic() {
         boolean isHere = true;
         while (isHere) {
-            UI();
+            UI(); // show user available options
             String userInput = inputString();
             if (userInput.equals("1")) {
                 System.out.println("Please, enter you camera data in format:\n" +
@@ -117,6 +119,7 @@ public class Collection {
         }
 
     }
+
     public String inputString() {
         Scanner in = new Scanner(System.in);
         return in.nextLine();

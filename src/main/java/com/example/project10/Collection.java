@@ -46,7 +46,7 @@ public class Collection {
     // 2.5 find methods
     public void findByModel() {
         System.out.println("What is the model of camera we are looking for?");
-        String model = inputString();
+        String model = inputString().toLowerCase();
         for (Camera c : collection) {
             if (c.getModel().toLowerCase().equals(model)) {
                 c.printDescription();
@@ -76,7 +76,7 @@ public class Collection {
     // 2.7 other method for search objects
     public void findByBrand() {
         System.out.println("What is the brand of camera we are looking for?");
-        String brand = inputString();
+        String brand = inputString().toLowerCase();;
         System.out.println("\nFound results:");
         for (Camera c : collection) {
             if (c.getBrand().toLowerCase().equals(brand)) {

@@ -12,7 +12,7 @@ public class Bank {
 
     // method that changes properties values inside it
     public int usdToEur() {
-        int amountInEur = (int) (balance * 1.03);
+        int amountInEur = (int) (balance * 0.98);
         System.out.println("Your " + balance + " " + currency + " equals " + amountInEur + " in EUR");
         balance = amountInEur; //changing properties inside the method
         currency = "EUR";

@@ -61,13 +61,13 @@ public class Collection {
         while (!isSorted) {
             isSorted = true;
             for (int j = 0; j < countOfObjects - outIterations - 1; j++) {
-                if (collection[j].getType().equals("Film")) {
+                if (collection[j].getType().toLowerCase().equals("film")) {
                     isSorted = false;
                     Camera temp = collection[j];
                     collection[j] = collection[j + 1];
                     collection[j + 1] = temp;
                 }
-            }
+            } outIterations++;
         }
         System.out.println("After sorting your collection looks like:");
         printAllCamers();
@@ -87,13 +87,14 @@ public class Collection {
 
     // Method for outputing options that are available
     public void UI() {
-        System.out.println("\nChoose an option to proceed:\n" +
-                "1 - add camera to collection\n" +
-                "2 - print all cameras\n" +
-                "3 - search cameras by model\n" +
-                "4 - search cameras by brand\n" +
-                "5 - sort cameras by type\n" +
-                "0 - exit the program\n");
+        System.out.println("""
+                Choose an option to proceed:
+                1 - add camera to collection
+                2 - print all cameras
+                3 - search cameras by model
+                4 - search cameras by brand
+                5 - sort cameras by type
+                Any button to exit the program""");
     }
 
     public void logic() {
@@ -112,8 +113,8 @@ public class Collection {
             } else if (userInput.equals("4")) {
                 findByBrand();
             } else if (userInput.equals("5")) {
-                sortCameras();
-            } else {
+                sortCameras(); } // I have fixed my sort method
+            else {
                 isHere = false;
             }
         }

@@ -55,16 +55,16 @@ public class Camera {
         return isoMin + "-" + isoMax;
     }
 
-    public String messageForType() {
+    /*public String messageForType() {
         if (type.toLowerCase().equals("film"))
             return "You will have to buy a film before using this camera";
         return "You will have to charge the battery before using this camera";
-    }
+    } */
 
     public void printDescription() {
         System.out.println("\nCamera specifications:\n");
         System.out.println("Camera name: " + brand + " " + model);
         System.out.println("Camera type: " + type);
-        System.out.println("ISO sensitivity: " + getIsoRange());
+        System.out.println("ISO sensitivity: " + getIsoRange() + "\n");
     }
 }

@@ -8,8 +8,10 @@ public class Main {
         //Part 1. References
 
         //1.1 Assignments
-        // creating new objects and references
+
         System.out.println("\n----------------\nPart 1 section 1\n----------------\n");
+
+        // creating new objects and references
         Rectangle rec1 = new Rectangle(13, 5);
         Rectangle rec2;
         Rectangle rec3;
@@ -39,8 +41,9 @@ public class Main {
         System.out.println("\nOur properties after change:");
         account1.printAccountInfo();
 
-        // Part 2
         System.out.println("\n----------------\n     Part 2\n----------------");
+
+        // Part 2
         System.out.println("\nWelcome to the cameras database!");
         Collection collection = new Collection();
         collection.logic();

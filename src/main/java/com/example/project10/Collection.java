@@ -86,7 +86,7 @@ public class Collection {
     }
 
     // Method for outputing options that are available
-    public void UI() {
+    public void printUserInterface() {
         System.out.println("""
                 Choose an option to proceed:
                 1 - add camera to collection
@@ -100,18 +100,31 @@ public class Collection {
     public void logic() {
         boolean isHere = true;
         while (isHere) {
-            UI(); // show user available options
+            printUserInterface(); // show user available options
             String userInput = inputString();
             if (userInput.equals("1")) {
                 System.out.println("Please, enter you camera data in format:\n" +
                         "'Brand' 'model' 'type' and for digital 'min ISO' 'max ISO'");
                 toCameraProperties(inputString());
             } else if (userInput.equals("2")) {
-                printAllCamers();
+                if(countOfObjects > 0){
+                    printAllCamers();}
+                else{
+                    System.out.println("Error! Can't proceed, collection is empty.");
+                }
+
             } else if (userInput.equals("3")) {
-                findByModel();
+                if(countOfObjects > 0){
+                    findByModel();}
+                else{
+                    System.out.println("Error! Can't proceed, collection is empty.");
+                }
             } else if (userInput.equals("4")) {
-                findByBrand();
+                if(countOfObjects > 0){
+                    findByBrand();}
+                else{
+                    System.out.println("Error! Can't proceed, collection is empty.");
+                }
             } else if (userInput.equals("5")) {
                 sortCameras(); } // I have fixed my sort method
             else {
